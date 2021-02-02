@@ -53,7 +53,7 @@ function doPost(e) {
 
   reply_message.unshift({
     type: "text",
-    text: name + ":\r\n" + ConTent[name][card == true ? "card" : "position"],
+    text: name + " :\r\n" + ConTent[name][card == true ? "card" : "position"],
   });
 
   //定義回傳訊息
