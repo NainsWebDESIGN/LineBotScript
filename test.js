@@ -22,6 +22,8 @@ function doPost(e) {
     if (userMessage.indexOf(person[i]) !== -1) {
       name = person[i];
       break;
+    } else {
+      name = "您好請輸入關鍵字";
     }
   }
   let ConTent = {
@@ -40,11 +42,17 @@ function doPost(e) {
         "兩大劍豪\r\n2號位: 攻擊加成\r\n4號位: 攻擊加成\r\n6號位: 攻擊加成\r\n2件套推薦攻擊加成\r\n(攻擊越高詛咒效益越高)",
       position: "輔助輸出，戒指建議全滿\r\n配合戒指3技詛咒加上主輸出疊加有奇效",
     },
+    您好請輸入關鍵字: {
+      card:
+        "想呼叫我請輸入\r\n「家教小幫手」\r\n想了解輔助卡配置請輸入\r\n「角色名稱」及「輔助卡」\r\n想了解角色定位請輸入\r\n「角色名稱」",
+      position:
+        "想呼叫我請輸入\r\n「家教小幫手」\r\n想了解輔助卡配置請輸入\r\n「角色名稱」及「輔助卡」\r\n想了解角色定位請輸入\r\n「角色名稱」",
+    },
   };
 
-  let card = userMessage.indexOf("輔助卡") !== -1;
+  let card = userMessage.indexOf("輔助卡");
 
-  if (userMessage == call || (name == "" && card == false)) {
+  if (userMessage == call || (name == "" && card == -1)) {
     reply_message.unshift({
       type: "text",
       text:
@@ -54,7 +62,7 @@ function doPost(e) {
 
   reply_message.unshift({
     type: "text",
-    text: name + " :\r\n" + ConTent[name][card == true ? "card" : "position"],
+    text: name + " :\r\n" + ConTent[name][card !== -1 ? "card" : "position"],
   });
 
   //定義回傳訊息
