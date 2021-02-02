@@ -16,13 +16,6 @@ function doPost(e) {
     return;
   }
   let call = "家教小幫手";
-  if (userMessage == call) {
-    reply_message.unshift({
-      type: "text",
-      text:
-        "我在!想了解輔助卡配置請輸入\r\n「角色名稱」及「輔助卡」\r\n想了解角色定位請輸入\r\n「角色名稱」及「定位」",
-    });
-  }
   let person = ["白蘭", "十年骸", "史庫瓦羅"];
   let name = "";
   for (let i = 0; i < person.length; i++) {
@@ -50,6 +43,14 @@ function doPost(e) {
   };
 
   let card = userMessage.indexOf("輔助卡") !== -1;
+
+  if (userMessage == call || (name == "" && card == false)) {
+    reply_message.unshift({
+      type: "text",
+      text:
+        "我在!想了解輔助卡配置請輸入\r\n「角色名稱」及「輔助卡」\r\n想了解角色定位請輸入\r\n「角色名稱」",
+    });
+  }
 
   reply_message.unshift({
     type: "text",
