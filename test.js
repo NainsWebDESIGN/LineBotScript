@@ -206,7 +206,7 @@ function doPost(e) {
   let card = userMessage.indexOf("輔助卡");
   let position = userMessage.indexOf("定位");
   let nothing =
-    "ciao-su!\r\n欲知輔助卡配置請於字句中加入\r\n「角色名稱」及「輔助卡」\r\n欲知角色定位請於字句中加入\r\n「角色名稱」及「定位」\r\n魔盒僅需兩隻主要輸出，一隻配置擺前面一支全輸出擺三號位，其餘根據魔盒面屬性配置一套高破招的守護的誓約即可\r\n完整角色名稱 : \r\n" +
+    "ciao-su!\r\n\r\n欲知輔助卡配置請於字句中加入\r\n「角色名稱」及「輔助卡」\r\n欲知角色定位請於字句中加入\r\n「角色名稱」及「定位」\r\n\r\n魔盒僅需兩隻主要輸出，一隻配置擺前面一支全輸出擺三號位，其餘根據魔盒面屬性配置一套高破招的守護的誓約即可\r\n\r\n完整角色名稱 : \r\n" +
     person.join("  ");
   let IndexIf = () => {
     if (userMessage == call) {
